@@ -123,6 +123,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")
 
+TEMPLATES[0]['DIRS'] = [
+    os.path.join(BASE_DIR, "templates"),
+]
+
 INSTALLED_APPS = INSTALLED_APPS + [
     'rest_framework',
     'rest_framework.authtoken',
@@ -133,3 +137,26 @@ INSTALLED_APPS = INSTALLED_APPS + [
     'rest_auth.registration',
     'rest_framework_swagger',
     ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
+
+SWAGGER_SETTINGS = {
+    'LOGIN_URL': 'login',
+    'LOGOUT_URL': 'logout',
+}
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'prabhatiitbhu'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'prabhatiitbhu@gmail.com'
+
