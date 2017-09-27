@@ -19,12 +19,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView, RedirectView
 
-from rest_framework_swagger.views import get_swagger_view
-
 urlpatterns = [
-    url(r'^rest-auth/', include('rest_auth.urls')),
-    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^api/', include('apps.articles.urls', namespace='articles')),
+    url(r'^api/', include('apps.authentication.urls', namespace='authentication')),
+    url(r'^api/', include('apps.profiles.urls', namespace='profiles')),
 ]
 
 if settings.DEBUG:

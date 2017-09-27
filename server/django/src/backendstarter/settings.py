@@ -128,27 +128,24 @@ TEMPLATES[0]['DIRS'] = [
 ]
 
 INSTALLED_APPS = INSTALLED_APPS + [
+    'corsheaders',
+    'django_extensions',
     'rest_framework',
-    'rest_framework.authtoken',
-    'rest_auth',
 
-    'allauth',
-    'allauth.account',
-    'rest_auth.registration',
-    'rest_framework_swagger',
+    'apps.articles',
+    'apps.authentication',
+    'apps.core',
+    'apps.profiles',
+
     ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
-    )
-}
+# Tell Django about the custom `User` model we created. The string
+# `authentication.User` tells Django we are referring to the `User` model in
+# the `authentication` module. This module is registered above in a setting
+# called `INSTALLED_APPS`.
 
-SWAGGER_SETTINGS = {
-    'LOGIN_URL': 'login',
-    'LOGOUT_URL': 'logout',
-}
+AUTH_USER_MODEL = 'authentication.User'
+
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -159,4 +156,21 @@ EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'prabhatiitbhu@gmail.com'
+
+
+CORS_ORIGIN_WHITELIST = (
+    '0.0.0.0:8080',
+    'localhost:8080',
+)
+
+REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'apps.core.exceptions.core_exception_handler',
+    'NON_FIELD_ERRORS_KEY': 'error',
+
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'apps.authentication.backends.JWTAuthentication',
+    ),
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 20,
+}
 
