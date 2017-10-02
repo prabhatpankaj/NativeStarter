@@ -10,6 +10,7 @@ migrate:
 clear:
 	rm -rf media_cdn/cache
 	rm -rf media_cdn/images
+	rm -rf src/db.sqlite3
 	
 auth:
 	python src/manage.py loaddata fixtures/auth.user.json
