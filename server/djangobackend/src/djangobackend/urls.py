@@ -4,10 +4,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^docs/', include('rest_framework_docs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api/v1/auth/', include('authentication.urls')),
-    url(r'^api/v1/quizzes/', include('quiz.urls')),
+    url(r'^', include('homepage.urls')),
+    url(r'^account/', include('authentication.urls')),
+    url(r'^quiz/', include('quiz.urls')),
 ]
 
 if settings.DEBUG:

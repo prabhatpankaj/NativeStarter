@@ -1,0 +1,161 @@
+html {
+    height: 100%;
+    background-color: rgba(0,67,87,1);
+}
+body {
+    min-height: 100%;
+    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,67,87,1) 80%, rgba(0,67,87,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,1)), color-stop(80%, rgba(0,67,87,1)), color-stop(100%, rgba(0,67,87,1)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,67,87,1) 80%, rgba(0,67,87,1) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,67,87,1) 80%, rgba(0,67,87,1) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,67,87,1) 80%, rgba(0,67,87,1) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,67,87,1) 80%, rgba(0,67,87,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#004357', GradientType=0 );
+    background-color: rgba(0,67,87,1);
+}
+body {
+    color: #fff;
+    font-size: 14px;
+    font-family: Arial;
+    line-height: 1.9em;
+    text-align: center;
+}
+h1 {
+    color: #fff;
+    font-family: Abril Fatface;
+    font-weight: 100;
+    font-size: 7vw;
+    letter-spacing: 0.04em;
+    text-transform: normal;
+    line-height: 1.05em;
+}
+h2 {
+    color: #fff;
+    font-family: Abril Fatface;
+    font-weight: 100;
+    font-size: 2vw;
+    letter-spacing: 0.04em;
+    text-transform: normal;
+    line-height: 1.05em;
+}
+h3 {
+    padding-top: 1em;
+    padding-bottom: 10px;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 0.17em;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+h4 {
+    color: #fff;
+    font-family: Abril Fatface;
+    font-weight: 100;
+    font-size: 4vw;
+    letter-spacing: 0.04em;
+    text-transform: normal;
+    line-height: 1.3em;
+}
+h5 {
+    color: #fff;
+    font-family: Abril Fatface;
+    font-weight: 100;
+    font-size: 2.5vw;
+    letter-spacing: 0.04em;
+    text-transform: normal;
+    line-height: 1.2em;
+}
+@media (max-width: 767px) {
+h1 {
+    font-size: 400%;
+    }
+}
+@media (max-width: 767px) {
+h5 {
+    font-size: 35px;
+    }
+}
+h6 {
+    padding-top: 1em;
+    padding-bottom: 10px;
+    font-weight: 100;
+    text-transform: uppercase !important;
+    letter-spacing: 0.17em;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+.small {
+    font-size: 3em;
+    line-height: 0.4em;
+}
+.button {
+    font: Arial;
+    font-size: 0.85em;
+    text-decoration: none;
+    background-color: transparent;
+    color: #fff;
+    padding: 0.75em 1em;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.17em;
+    margin:6px;
+}
+.button:hover {
+    background-color: #fff;
+    color: #022832;
+    text-decoration: none;
+    margin:6px;
+}
+.button:focus {
+    background-color: #fff;
+    color: #022832;
+    text-decoration: none;
+}
+.startbutton {
+    font: Arial;
+    font-size: 0.85em;
+    text-decoration: none;
+    background-color: transparent;
+    color: #fff;
+    padding: 0.75em 1em;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.17em;
+    margin: 6px;
+    display: inline-block;
+}
+.startbutton:hover {
+    background-color: #fff;
+    color: #022832;
+    text-decoration: none;
+    margin: 6px;
+    display: inline-block;
+}
+.startbutton:focus {
+    background-color: #fff;
+    color: #022832;
+    text-decoration: none;
+}
+.divider{
+    width:10px;
+    height:auto;
+    display:inline-block;
+}
+.divclass{
+    padding-top: 10%;
+    margin-right: 5%;
+    margin-bottom: 10%;
+    margin-left: 5%;
+}
+.columnstart {
+    background: white;
+}
+
+.img-circle {
+    border-radius: 50%;
+    margin: 25px;
+}
+.col-sm-4 {
+    padding-left: 3%;
+    padding-right: 3%;
+}

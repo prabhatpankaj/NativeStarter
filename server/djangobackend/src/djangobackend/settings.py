@@ -129,7 +129,7 @@ TEMPLATES[0]['DIRS'] = [
 
 INSTALLED_APPS = INSTALLED_APPS + [
     'rest_framework',
-    'rest_framework_docs',
+    'homepage',
     'authentication',
     'quiz'
     ]
