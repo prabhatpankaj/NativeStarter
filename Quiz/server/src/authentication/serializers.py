@@ -42,7 +42,6 @@ class AccountSerializer(serializers.ModelSerializer):
         Ensure the passwords are the same
         '''
         if data['password']:
-            print "Here"
             if data['password'] != data['confirm_password']:
                 raise serializers.ValidationError(
                     "The passwords have to be the same"

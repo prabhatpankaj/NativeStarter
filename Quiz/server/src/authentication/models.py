@@ -8,8 +8,13 @@ from django.db import models
 class AccountManager(BaseUserManager):
     def _create_user(self, email, password,
                      is_staff, is_superuser, **kwargs):
+        # Ensure that an email address is set
         if not email:
             raise ValueError('Users must have a valid e-mail address')
+
+        # Ensure that a username is set
+        if not kwargs.get('username'):
+            raise ValueError('Users must have a valid username')
 
         account = self.model(
             email=self.normalize_email(email),
@@ -34,8 +39,8 @@ class AccountManager(BaseUserManager):
 
 
 class Account(AbstractBaseUser, PermissionsMixin):
-    username = models.CharField(max_length=50, unique=True)
-    email = models.EmailField(unique=True)
+    username = models.CharField(db_index=True, max_length=50, unique=True)
+    email = models.EmailField(db_index=True, unique=True)
     firstname = models.CharField(max_length=30, blank=True , null=True)
     lastname = models.CharField(max_length=30, blank=True, null=True)
 
